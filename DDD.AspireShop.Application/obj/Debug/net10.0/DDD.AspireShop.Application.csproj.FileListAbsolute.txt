@@ -1,0 +1,15 @@
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/bin/Debug/net10.0/DDD.AspireShop.Application.deps.json
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/bin/Debug/net10.0/DDD.AspireShop.Application.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/bin/Debug/net10.0/DDD.AspireShop.Application.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/bin/Debug/net10.0/DDD.AspireShop.Domain.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/bin/Debug/net10.0/DDD.AspireShop.Domain.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.csproj.AssemblyReference.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.AssemblyInfoInputs.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.AssemblyInfo.cs
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.csproj.CoreCompileInputs.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.Aspi.78825AD2.Up2Date
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/refint/DDD.AspireShop.Application.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/DDD.AspireShop.Application.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/Debug/net10.0/ref/DDD.AspireShop.Application.dll

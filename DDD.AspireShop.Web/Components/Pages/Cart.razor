@@ -1,0 +1,106 @@
+@page "/cart"
+@rendermode InteractiveServer
+@implements IDisposable
+@inject ShoppingCartService CartService
+
+<PageTitle>购物车</PageTitle>
+
+<div class="jd-page">
+    <CommerceHeader />
+
+    <section class="jd-cart-title">
+        <div>
+            <h1>购物车</h1>
+            <span>全部商品 @CartService.TotalQuantity</span>
+        </div>
+        <a href="store">继续购物</a>
+    </section>
+
+    @if (CartService.Lines.Count == 0)
+    {
+        <section class="jd-empty-cart">
+            <h2>购物车空空如也</h2>
+            <p>去挑选一些喜欢的商品吧。</p>
+            <a class="btn btn-danger" href="store">去购物</a>
+        </section>
+    }
+    else
+    {
+        <section class="jd-cart-layout">
+            <div class="jd-cart-table">
+                <div class="jd-cart-head">
+                    <span>商品</span>
+                    <span>单价</span>
+                    <span>数量</span>
+                    <span>小计</span>
+                    <span>操作</span>
+                </div>
+                @foreach (var line in CartService.Lines)
+                {
+                    <article class="jd-cart-row">
+                        <div class="jd-cart-product">
+                            <div>@GetCategory(line.ProductName)</div>
+                            <strong>@line.ProductName</strong>
+                        </div>
+                        <span>@line.Currency @line.UnitPrice.ToString("0.00")</span>
+                        <input class="form-control" type="number" min="0" value="@line.Quantity" @onchange="eventArgs => ChangeQuantity(line.ProductId, eventArgs.Value?.ToString())" />
+                        <strong>@line.Currency @line.LineTotal.ToString("0.00")</strong>
+                        <button type="button" @onclick="() => CartService.Remove(line.ProductId)">删除</button>
+                    </article>
+                }
+            </div>
+
+            <aside class="jd-cart-summary">
+                <span>已选 @CartService.TotalQuantity 件商品</span>
+                <strong>CNY @CartService.TotalAmount.ToString("0.00")</strong>
+                <a class="btn btn-danger" href="checkout">去结算</a>
+                <button class="btn btn-outline-secondary" @onclick="CartService.Clear">清空购物车</button>
+            </aside>
+        </section>
+    }
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        CartService.Changed += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CartService.Changed -= StateHasChanged;
+    }
+
+    private void ChangeQuantity(Guid productId, string? value)
+    {
+        if (int.TryParse(value, out var quantity))
+        {
+            CartService.ChangeQuantity(productId, quantity);
+        }
+    }
+
+    private static string GetCategory(string name)
+    {
+        if (name.Contains("书", StringComparison.OrdinalIgnoreCase))
+        {
+            return "图书";
+        }
+
+        if (name.Contains("课程", StringComparison.OrdinalIgnoreCase) || name.Contains("训练营", StringComparison.OrdinalIgnoreCase) || name.Contains("工作坊", StringComparison.OrdinalIgnoreCase))
+        {
+            return "课程";
+        }
+
+        if (name.Contains("咖啡", StringComparison.OrdinalIgnoreCase))
+        {
+            return "食品";
+        }
+
+        if (name.Contains("键盘", StringComparison.OrdinalIgnoreCase) || name.Contains("背包", StringComparison.OrdinalIgnoreCase))
+        {
+            return "装备";
+        }
+
+        return "工具";
+    }
+}

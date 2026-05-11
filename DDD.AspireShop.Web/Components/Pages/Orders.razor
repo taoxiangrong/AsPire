@@ -1,0 +1,121 @@
+@page "/orders"
+@rendermode InteractiveServer
+@inject ShopApiClient ApiClient
+
+<PageTitle>我的订单</PageTitle>
+
+<div class="jd-page">
+    <CommerceHeader />
+
+    <section class="jd-member-layout">
+        <aside class="jd-member-menu">
+            <h2>我的商城</h2>
+            <a class="active" href="orders">我的订单</a>
+            <a href="cart">购物车</a>
+            <a href="checkout">结算中心</a>
+            <a href="flash-sale">我的秒杀</a>
+            <a href="">优惠券</a>
+            <a href="">售后服务</a>
+        </aside>
+
+        <main class="jd-member-main">
+            <section class="jd-order-toolbar">
+                <div>
+                    <h1>我的订单</h1>
+                    <span>查看普通订单和秒杀订单的履约状态</span>
+                </div>
+                <button class="btn btn-outline-secondary" @onclick="ReloadAsync">刷新订单</button>
+            </section>
+
+            <div class="jd-order-tabs">
+                <button class="active" type="button">全部订单</button>
+                <button type="button">待付款</button>
+                <button type="button">待发货</button>
+                <button type="button">待收货</button>
+                <button type="button">已完成</button>
+            </div>
+
+            @if (orders.Count == 0)
+            {
+                <section class="jd-empty-cart">
+                    <h2>暂无订单</h2>
+                    <p>去商城挑选商品后，订单会出现在这里。</p>
+                    <a class="btn btn-danger" href="store">去购物</a>
+                </section>
+            }
+            else
+            {
+                <section class="jd-order-list">
+                    @foreach (var order in orders)
+                    {
+                        <article class="jd-order-card">
+                            <header>
+                                <span>@order.CreatedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</span>
+                                <strong>订单号 @order.Id</strong>
+                                <em>@GetStatusText(order.Status)</em>
+                            </header>
+                            @foreach (var line in order.Lines)
+                            {
+                                <div class="jd-order-row">
+                                    <div class="jd-order-product">
+                                        <span>@GetCategory(line.ProductName)</span>
+                                        <strong>@line.ProductName</strong>
+                                    </div>
+                                    <span>x @line.Quantity</span>
+                                    <strong>CNY @line.LineTotal.ToString("0.00")</strong>
+                                </div>
+                            }
+                            <footer>
+                                <span>收货人：@order.CustomerName</span>
+                                <strong>实付 CNY @order.TotalAmount.ToString("0.00")</strong>
+                                <button class="btn btn-outline-danger" type="button">再次购买</button>
+                            </footer>
+                        </article>
+                    }
+                </section>
+            }
+        </main>
+    </section>
+</div>
+
+@code {
+    private List<OrderDto> orders = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ReloadAsync();
+    }
+
+    private async Task ReloadAsync()
+    {
+        orders = (await ApiClient.GetOrdersAsync()).ToList();
+    }
+
+    private static string GetStatusText(string status) =>
+        status == "Submitted" ? "待发货" : status;
+
+    private static string GetCategory(string name)
+    {
+        if (name.Contains("书", StringComparison.OrdinalIgnoreCase))
+        {
+            return "图书";
+        }
+
+        if (name.Contains("课程", StringComparison.OrdinalIgnoreCase) || name.Contains("训练营", StringComparison.OrdinalIgnoreCase) || name.Contains("工作坊", StringComparison.OrdinalIgnoreCase))
+        {
+            return "课程";
+        }
+
+        if (name.Contains("咖啡", StringComparison.OrdinalIgnoreCase))
+        {
+            return "食品";
+        }
+
+        if (name.Contains("键盘", StringComparison.OrdinalIgnoreCase) || name.Contains("背包", StringComparison.OrdinalIgnoreCase))
+        {
+            return "装备";
+        }
+
+        return "工具";
+    }
+}

@@ -1,0 +1,51 @@
+﻿@page "/overview"
+
+<PageTitle>DDD AspireShop</PageTitle>
+
+<section class="shop-hero">
+    <div>
+        <p class="eyebrow">DDD AspireShop</p>
+        <h1>AspireShop 云原生商城</h1>
+        <p class="hero-copy">
+            覆盖商品浏览、购物车、订单、秒杀、领域事件和 CAP 消息消费的 DDD 商城样例。
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="store">进入商城</a>
+            <a class="btn btn-outline-light" href="flash-sale">秒杀专场</a>
+        </div>
+    </div>
+</section>
+
+<section class="metric-grid">
+    <article>
+        <span>Domain</span>
+        <strong>交易规则</strong>
+        <p>商品库存扣减、订单提交、限购校验和值对象约束都进入领域或应用用例。</p>
+    </article>
+    <article>
+        <span>Application</span>
+        <strong>商城用例</strong>
+        <p>MediatR 承载商品查询、普通下单、秒杀下单和领域事件派发。</p>
+    </article>
+    <article>
+        <span>Infrastructure</span>
+        <strong>消息驱动</strong>
+        <p>订单提交后发布领域事件，再转换为 CAP 消息，由消费者消费。</p>
+    </article>
+</section>
+
+<section class="commerce-roadmap">
+    <h2>商城能力地图</h2>
+    <div class="feature-strip">
+        <span>商品分类</span>
+        <span>搜索筛选</span>
+        <span>购物车</span>
+        <span>结算下单</span>
+        <span>秒杀限购</span>
+        <span>订单履约</span>
+        <span>优惠券</span>
+        <span>会员积分</span>
+        <span>售后退款</span>
+        <span>运营看板</span>
+    </div>
+</section>

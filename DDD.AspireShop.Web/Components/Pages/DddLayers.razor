@@ -1,0 +1,50 @@
+@page "/ddd"
+
+<PageTitle>平台维护</PageTitle>
+
+<div class="jd-page">
+    <CommerceHeader />
+
+    <section class="jd-maintenance-hero">
+        <div>
+            <span>平台维护中心</span>
+            <h1>AspireShop 系统运行与架构说明</h1>
+            <p>这些入口只服务于系统维护，不出现在普通用户购物主流程中。</p>
+        </div>
+        <a class="btn btn-light" href="store">返回商城</a>
+    </section>
+
+    <section class="jd-maintenance-grid">
+        <article>
+            <span>01</span>
+            <h2>领域层</h2>
+            <p>商品、订单、金额、领域事件等业务核心放在 Domain，不引用 Web、API 或数据库。</p>
+            <code>Domain/Products · Domain/Orders</code>
+        </article>
+        <article>
+            <span>02</span>
+            <h2>应用层</h2>
+            <p>MediatR 命令和查询承载商品查询、普通下单、秒杀下单与领域事件派发。</p>
+            <code>Application/Catalog · Application/Orders · Application/FlashSales</code>
+        </article>
+        <article>
+            <span>03</span>
+            <h2>基础设施</h2>
+            <p>当前使用内存仓储和 CAP 内存消息队列，后续可以替换真实数据库和消息中间件。</p>
+            <code>Infrastructure · CAP</code>
+        </article>
+        <article>
+            <span>04</span>
+            <h2>商城入口</h2>
+            <p>Web 只负责商城体验，API 采用传统 Controller，业务调用进入 MediatR。</p>
+            <code>Controllers · Components/Pages</code>
+        </article>
+    </section>
+
+    <section class="jd-maintenance-actions">
+        <a href="orders">订单管理</a>
+        <a href="api/orders/messages">消息消费记录</a>
+        <a href="products">商品列表</a>
+        <a href="flash-sale">秒杀会场</a>
+    </section>
+</div>

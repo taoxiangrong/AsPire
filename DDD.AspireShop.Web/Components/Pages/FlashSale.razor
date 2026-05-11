@@ -1,0 +1,115 @@
+@page "/flash-sale"
+@rendermode InteractiveServer
+@inject ShopApiClient ApiClient
+
+<PageTitle>京秒杀</PageTitle>
+
+<div class="jd-page">
+    <CommerceHeader />
+
+    <section class="jd-sub-hero jd-kill-hero">
+        <div>
+            <span>京秒杀</span>
+            <h1>限时低价，先到先得</h1>
+            <p>精选爆品限时抢购，每单限购 2 件，售完即止。</p>
+        </div>
+        <strong>当前场次 10:00 - 12:00</strong>
+    </section>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="jd-message @(isError ? "error" : "success")">@message</div>
+    }
+
+    @if (items is null)
+    {
+        <section class="jd-panel">正在加载秒杀商品...</section>
+    }
+    else
+    {
+        <section class="jd-kill-grid">
+            @foreach (var item in items)
+            {
+                <article class="jd-kill-card">
+                    <div class="jd-kill-image">@GetCategory(item.ProductName)</div>
+                    <div class="jd-kill-body">
+                        <span>@(item.IsActive ? "正在抢购" : "已结束")</span>
+                        <h2>@item.ProductName</h2>
+                        <p>@item.Description</p>
+                        <div class="jd-kill-price">
+                            <strong>@item.Currency @item.FlashPrice.ToString("0.00")</strong>
+                            <del>@item.Currency @item.OriginalPrice.ToString("0.00")</del>
+                        </div>
+                        <div class="stock-bar"><i style="width:@GetStockWidth(item)%"></i></div>
+                        <small>仅剩 @item.RemainingStock 件 · 截止 @item.EndsAt.ToLocalTime().ToString("HH:mm")</small>
+                        <button class="btn btn-danger" disabled="@(!item.IsActive || isSubmitting)" @onclick="() => SubmitAsync(item)">立即抢购</button>
+                    </div>
+                </article>
+            }
+        </section>
+    }
+</div>
+
+@code {
+    private IReadOnlyCollection<FlashSaleItemDto>? items;
+    private string customerName = "秒杀用户";
+    private string? message;
+    private bool isError;
+    private bool isSubmitting;
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = await ApiClient.GetFlashSaleItemsAsync();
+    }
+
+    private async Task SubmitAsync(FlashSaleItemDto item)
+    {
+        isSubmitting = true;
+        try
+        {
+            var order = await ApiClient.SubmitFlashSaleOrderAsync(new SubmitFlashSaleOrderRequest(customerName, item.ProductId, 1));
+            items = await ApiClient.GetFlashSaleItemsAsync();
+            isError = false;
+            message = $"抢购成功，订单 {order.Id} 已创建。";
+        }
+        catch (Exception exception)
+        {
+            isError = true;
+            message = exception.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    private static int GetStockWidth(FlashSaleItemDto item)
+    {
+        return Math.Clamp(item.RemainingStock * 8, 8, 100);
+    }
+
+    private static string GetCategory(string name)
+    {
+        if (name.Contains("书", StringComparison.OrdinalIgnoreCase))
+        {
+            return "图书";
+        }
+
+        if (name.Contains("课程", StringComparison.OrdinalIgnoreCase) || name.Contains("训练营", StringComparison.OrdinalIgnoreCase) || name.Contains("工作坊", StringComparison.OrdinalIgnoreCase))
+        {
+            return "课程";
+        }
+
+        if (name.Contains("咖啡", StringComparison.OrdinalIgnoreCase))
+        {
+            return "食品";
+        }
+
+        if (name.Contains("键盘", StringComparison.OrdinalIgnoreCase) || name.Contains("背包", StringComparison.OrdinalIgnoreCase))
+        {
+            return "装备";
+        }
+
+        return "工具";
+    }
+}

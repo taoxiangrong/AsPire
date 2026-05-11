@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.AspireShop.ServiceDefaults\DDD.AspireShop.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\DDD.AspireShop.Application\DDD.AspireShop.Application.csproj" />
+  </ItemGroup>
+
+</Project>

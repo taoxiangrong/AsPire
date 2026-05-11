@@ -1,0 +1,12 @@
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/bin/Debug/net10.0/DDD.AspireShop.ServiceDefaults.deps.json
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/bin/Debug/net10.0/DDD.AspireShop.ServiceDefaults.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/bin/Debug/net10.0/DDD.AspireShop.ServiceDefaults.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.csproj.AssemblyReference.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.AssemblyInfoInputs.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.AssemblyInfo.cs
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.csproj.CoreCompileInputs.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/refint/DDD.AspireShop.ServiceDefaults.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/DDD.AspireShop.ServiceDefaults.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/Debug/net10.0/ref/DDD.AspireShop.ServiceDefaults.dll

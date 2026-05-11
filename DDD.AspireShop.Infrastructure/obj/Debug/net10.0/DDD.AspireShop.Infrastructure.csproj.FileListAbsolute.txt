@@ -1,0 +1,17 @@
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.csproj.AssemblyReference.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.AssemblyInfoInputs.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.AssemblyInfo.cs
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Infrastructure.deps.json
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Infrastructure.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Infrastructure.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Application.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Domain.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Application.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/bin/Debug/net10.0/DDD.AspireShop.Domain.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.Aspi.877B4DC1.Up2Date
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/refint/DDD.AspireShop.Infrastructure.dll
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/DDD.AspireShop.Infrastructure.pdb
+/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/Debug/net10.0/ref/DDD.AspireShop.Infrastructure.dll

@@ -1,0 +1,86 @@
+@page "/products"
+@rendermode InteractiveServer
+@inject ShopApiClient ApiClient
+@inject ShoppingCartService Cart
+
+<PageTitle>全部商品</PageTitle>
+
+<div class="jd-page">
+    <CommerceHeader />
+
+    <section class="jd-list-header">
+        <div>
+            <h1>全部商品</h1>
+            <span>自营好物 · 品质保障 · 极速履约</span>
+        </div>
+        <a class="btn btn-danger" href="cart">查看购物车</a>
+    </section>
+
+    @if (products is null)
+    {
+        <section class="jd-panel">正在加载商品...</section>
+    }
+    else
+    {
+        <section class="jd-product-grid">
+            @foreach (var product in products)
+            {
+                <article class="jd-product-card">
+                    <div class="jd-product-image">
+                        <span>@GetCategory(product)</span>
+                    </div>
+                    <div class="jd-product-body">
+                        <span class="jd-tag">@GetSalesTag(product)</span>
+                        <h2>@product.Name</h2>
+                        <p>@product.Description</p>
+                        <div class="jd-price-line">
+                            <strong>@product.Currency @product.Price.ToString("0.00")</strong>
+                            <span>库存 @product.Stock</span>
+                        </div>
+                        <div class="jd-card-actions">
+                            <button class="btn btn-danger" @onclick="() => Cart.Add(product)">加入购物车</button>
+                            <a class="btn btn-outline-secondary" href="checkout">立即购买</a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </section>
+    }
+</div>
+
+@code {
+    private IReadOnlyCollection<ProductDto>? products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ApiClient.GetProductsAsync();
+    }
+
+    private static string GetSalesTag(ProductDto product) =>
+        product.Stock <= 6 ? "低库存" : product.Price >= 1000 ? "企业优选" : "自营";
+
+    private static string GetCategory(ProductDto product)
+    {
+        if (product.Name.Contains("书", StringComparison.OrdinalIgnoreCase))
+        {
+            return "图书";
+        }
+
+        if (product.Name.Contains("课程", StringComparison.OrdinalIgnoreCase) || product.Name.Contains("训练营", StringComparison.OrdinalIgnoreCase) || product.Name.Contains("工作坊", StringComparison.OrdinalIgnoreCase))
+        {
+            return "课程";
+        }
+
+        if (product.Name.Contains("咖啡", StringComparison.OrdinalIgnoreCase))
+        {
+            return "食品";
+        }
+
+        if (product.Name.Contains("键盘", StringComparison.OrdinalIgnoreCase) || product.Name.Contains("背包", StringComparison.OrdinalIgnoreCase))
+        {
+            return "装备";
+        }
+
+        return "工具";
+    }
+}

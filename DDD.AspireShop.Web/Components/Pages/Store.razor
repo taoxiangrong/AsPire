@@ -1,0 +1,306 @@
+@page "/store"
+@page "/"
+@rendermode InteractiveServer
+@inject ShopApiClient ApiClient
+@inject ShoppingCartService Cart
+
+<PageTitle>AspireShop 商城</PageTitle>
+
+<div class="jd-page">
+    <section class="jd-topbar">
+        <span>上海</span>
+        <div>
+            <a href="">你好，请登录</a>
+            <a href="">免费注册</a>
+            <a href="orders">我的订单</a>
+            <a href="cart">购物车 @Cart.TotalQuantity</a>
+            <a href="">客户服务</a>
+            <a href="flash-sale">秒杀频道</a>
+        </div>
+    </section>
+
+    <section class="jd-header">
+        <a class="jd-brand" href="store">
+            <strong>AspireShop</strong>
+            <span>综合商城</span>
+        </a>
+        <div class="jd-search">
+            <div class="jd-search-box">
+                <input placeholder="搜索图书、课程、云原生工具、开发者装备" @bind="keyword" @bind:event="oninput" />
+                <button type="button">搜索</button>
+            </div>
+            <div class="jd-hotwords">
+                <button type="button" @onclick='() => SetKeyword("秒杀")'>限时秒杀</button>
+                <button type="button" @onclick='() => SetKeyword("课程")'>实战课程</button>
+                <button type="button" @onclick='() => SetKeyword("键盘")'>外设装备</button>
+                <button type="button" @onclick='() => SetKeyword("咖啡")'>办公补给</button>
+            </div>
+        </div>
+        <a class="jd-cart" href="cart">购物车 <strong>@Cart.TotalQuantity</strong></a>
+    </section>
+
+    <nav class="jd-nav">
+        <button class="active" type="button" @onclick='() => SetCategory("全部")'>首页</button>
+        <button type="button" @onclick='() => SetCategory("图书")'>图书</button>
+        <button type="button" @onclick='() => SetCategory("课程")'>课程</button>
+        <button type="button" @onclick='() => SetCategory("工具")'>数码工具</button>
+        <button type="button" @onclick='() => SetCategory("装备")'>开发者装备</button>
+        <button type="button" @onclick='() => SetCategory("食品")'>办公食品</button>
+        <a href="flash-sale">秒杀</a>
+    </nav>
+
+    <section class="jd-hero-grid">
+        <aside class="jd-category-panel">
+            <h2>全部商品分类</h2>
+            @foreach (var category in categoryGroups)
+            {
+                <button type="button" @onclick="() => SetCategory(category.Name)">
+                    <strong>@category.Name</strong>
+                    <span>@category.Description</span>
+                </button>
+            }
+        </aside>
+
+        <div class="jd-main-promo">
+            <span>年度技术采购节</span>
+            <h1>云原生团队装备一站配齐</h1>
+            <p>爆款好物、品质课程、效率装备和办公补给集中采购，支持购物车、结算和限时秒杀。</p>
+            <div class="jd-promo-actions">
+                <a class="btn btn-light" href="flash-sale">立即抢购</a>
+                <a class="btn btn-outline-light" href="checkout">去结算</a>
+            </div>
+        </div>
+
+        <aside class="jd-user-panel">
+            <div class="jd-avatar">AS</div>
+            <h2>欢迎来到 AspireShop</h2>
+            <p>当前为演示会员，可体验下单、秒杀、消息消费和订单查看。</p>
+            <div class="jd-user-actions">
+                <a href="orders">订单中心</a>
+                <a href="cart">购物车</a>
+            </div>
+            <div class="jd-notice">
+                <strong>商城公告</strong>
+                <span>秒杀商品每单限购 2 件</span>
+                <span>自营商品下单后进入履约队列</span>
+            </div>
+        </aside>
+    </section>
+
+    <section class="jd-service-row">
+        @foreach (var service in services)
+        {
+            <article>
+                <strong>@service.Title</strong>
+                <span>@service.Description</span>
+            </article>
+        }
+    </section>
+
+    <section class="jd-flash-strip">
+        <div class="jd-flash-title">
+            <span>限时秒杀</span>
+            <strong>开发者爆品</strong>
+            <a href="flash-sale">进入秒杀频道</a>
+        </div>
+        @foreach (var product in products.OrderBy(product => product.Price).Take(4))
+        {
+            <article>
+                <span>@GetCategory(product)</span>
+                <strong>@product.Name</strong>
+                <p>CNY @(Math.Round(product.Price * 0.72m, 2).ToString("0.00"))</p>
+                <small>原价 @product.Price.ToString("0.00")</small>
+            </article>
+        }
+    </section>
+
+    <section class="jd-channel-grid">
+        @foreach (var channel in channels)
+        {
+            <a href="@channel.Href">
+                <strong>@channel.Title</strong>
+                <span>@channel.Description</span>
+            </a>
+        }
+    </section>
+
+    <section class="jd-filter-bar">
+        <div>
+            <strong>为你推荐</strong>
+            <span>@selectedCategory · @FilteredProducts.Count() 件商品</span>
+        </div>
+        <select class="form-select" @bind="sortMode">
+            <option value="featured">综合推荐</option>
+            <option value="price-asc">价格升序</option>
+            <option value="stock-desc">库存优先</option>
+        </select>
+    </section>
+
+    <section class="jd-product-grid">
+        @foreach (var product in FilteredProducts)
+        {
+            <article class="jd-product-card">
+                <div class="jd-product-image">
+                    <span>@GetCategory(product)</span>
+                </div>
+                <div class="jd-product-body">
+                    <span class="jd-tag">@GetSalesTag(product)</span>
+                    <h2>@product.Name</h2>
+                    <p>@product.Description</p>
+                    <div class="jd-price-line">
+                        <strong>@product.Currency @product.Price.ToString("0.00")</strong>
+                        <span>库存 @product.Stock</span>
+                    </div>
+                    <div class="jd-card-actions">
+                        <button class="btn btn-danger" @onclick="() => AddToCart(product)">加入购物车</button>
+                        <a class="btn btn-outline-secondary" href="checkout">立即购买</a>
+                    </div>
+                </div>
+            </article>
+        }
+    </section>
+
+    <section class="jd-footer">
+        <div>
+            <strong>购物指南</strong>
+            <a href="store">购物流程</a>
+            <a href="cart">购物车</a>
+            <a href="checkout">结算中心</a>
+        </div>
+        <div>
+            <strong>配送方式</strong>
+            <a href="">自营配送</a>
+            <a href="">极速达</a>
+            <a href="">门店自提</a>
+        </div>
+        <div>
+            <strong>支付方式</strong>
+            <a href="">在线支付</a>
+            <a href="">企业月结</a>
+            <a href="">发票服务</a>
+        </div>
+        <div>
+            <strong>售后服务</strong>
+            <a href="">退换货</a>
+            <a href="">价格保护</a>
+            <a href="">联系客服</a>
+        </div>
+        <div>
+            <strong>平台维护</strong>
+            <a href="ddd">架构说明</a>
+            <a href="orders">订单管理</a>
+            <a href="api/orders/messages">消息记录</a>
+        </div>
+    </section>
+</div>
+
+@code {
+    private IReadOnlyCollection<ProductDto> products = [];
+    private readonly string[] categories = ["全部", "图书", "工具", "课程", "装备", "食品"];
+    private readonly CategoryGroup[] categoryGroups =
+    [
+        new("图书", "DDD / 架构 / 工程管理"),
+        new("工具", "云原生 / 观测 / 研发平台"),
+        new("课程", "训练营 / 工作坊 / 实战课"),
+        new("装备", "键盘 / 背包 / 办公外设"),
+        new("食品", "咖啡 / 礼盒 / 团队补给")
+    ];
+    private readonly StoreFeature[] services =
+    [
+        new("正品保障", "自营优选，品质可追溯"),
+        new("极速履约", "订单事件驱动，状态实时流转"),
+        new("秒杀限购", "热点商品独立入口和库存校验"),
+        new("售后无忧", "退款、换货、工单能力预留")
+    ];
+    private readonly StoreFeature[] channels =
+    [
+        new("品牌闪购", "限时折扣与爆品会场", "flash-sale"),
+        new("企业采购", "团队课程和工具套装", "store"),
+        new("新品首发", "研发装备与效率工具", "store"),
+        new("会员福利", "积分、券包、专属价", "orders"),
+        new("服务市场", "部署、运维、培训支持", "store"),
+        new("订单履约", "消息驱动的交易链路", "orders")
+    ];
+    private string keyword = "";
+    private string selectedCategory = "全部";
+    private string sortMode = "featured";
+
+    private IEnumerable<ProductDto> FilteredProducts
+    {
+        get
+        {
+            var query = products.AsEnumerable();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                query = query.Where(product =>
+                    product.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                    product.Description.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                    GetCategory(product).Contains(keyword, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (selectedCategory != "全部")
+            {
+                query = query.Where(product => GetCategory(product) == selectedCategory);
+            }
+
+            return sortMode switch
+            {
+                "price-asc" => query.OrderBy(product => product.Price),
+                "stock-desc" => query.OrderByDescending(product => product.Stock),
+                _ => query.OrderBy(product => GetCategory(product)).ThenBy(product => product.Name)
+            };
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ApiClient.GetProductsAsync();
+    }
+
+    private void AddToCart(ProductDto product)
+    {
+        Cart.Add(product);
+    }
+
+    private void SetCategory(string category)
+    {
+        selectedCategory = categories.Contains(category) ? category : "全部";
+    }
+
+    private void SetKeyword(string value)
+    {
+        keyword = value;
+    }
+
+    private static string GetCategory(ProductDto product)
+    {
+        if (product.Name.Contains("书", StringComparison.OrdinalIgnoreCase))
+        {
+            return "图书";
+        }
+
+        if (product.Name.Contains("课程", StringComparison.OrdinalIgnoreCase) || product.Name.Contains("训练营", StringComparison.OrdinalIgnoreCase) || product.Name.Contains("工作坊", StringComparison.OrdinalIgnoreCase))
+        {
+            return "课程";
+        }
+
+        if (product.Name.Contains("咖啡", StringComparison.OrdinalIgnoreCase))
+        {
+            return "食品";
+        }
+
+        if (product.Name.Contains("键盘", StringComparison.OrdinalIgnoreCase) || product.Name.Contains("背包", StringComparison.OrdinalIgnoreCase))
+        {
+            return "装备";
+        }
+
+        return "工具";
+    }
+
+    private static string GetSalesTag(ProductDto product) =>
+        product.Stock <= 6 ? "低库存" : product.Price >= 1000 ? "企业优选" : "自营";
+
+    private sealed record CategoryGroup(string Name, string Description);
+
+    private sealed record StoreFeature(string Title, string Description, string Href = "store");
+}

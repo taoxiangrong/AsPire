@@ -1,0 +1,116 @@
+@page "/checkout"
+@rendermode InteractiveServer
+@inject ShopApiClient ApiClient
+@inject ShoppingCartService Cart
+
+<PageTitle>结算</PageTitle>
+
+<div class="jd-page">
+    <CommerceHeader />
+
+    <section class="jd-checkout-title">
+        <h1>填写并核对订单信息</h1>
+        <span>收货地址、支付方式、商品清单</span>
+    </section>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="jd-message @(isError ? "error" : "success")">@message</div>
+    }
+
+    <section class="jd-checkout-layout">
+        <div class="jd-checkout-main">
+            <article class="jd-panel">
+                <h2>收货人信息</h2>
+                <div class="jd-form-grid">
+                    <label>
+                        收货人
+                        <input class="form-control" @bind="customerName" />
+                    </label>
+                    <label>
+                        收货地址
+                        <input class="form-control" @bind="address" />
+                    </label>
+                </div>
+            </article>
+
+            <article class="jd-panel">
+                <h2>支付方式</h2>
+                <div class="jd-pay-list">
+                    @foreach (var method in paymentMethods)
+                    {
+                        <button class="@(paymentMethod == method ? "active" : "")" type="button" @onclick="() => paymentMethod = method">@method</button>
+                    }
+                </div>
+            </article>
+
+            <article class="jd-panel">
+                <h2>商品清单</h2>
+                @if (Cart.Lines.Count == 0)
+                {
+                    <p>购物车为空。</p>
+                }
+                else
+                {
+                    @foreach (var line in Cart.Lines)
+                    {
+                        <div class="jd-checkout-line">
+                            <span>@line.ProductName x @line.Quantity</span>
+                            <strong>@line.Currency @line.LineTotal.ToString("0.00")</strong>
+                        </div>
+                    }
+                }
+            </article>
+        </div>
+
+        <aside class="jd-order-summary">
+            <span>应付总额</span>
+            <strong>CNY @Cart.TotalAmount.ToString("0.00")</strong>
+            <p>配送至：@address</p>
+            <p>收货人：@customerName</p>
+            <button class="btn btn-danger" @onclick="SubmitAsync" disabled="@isSubmitting">提交订单</button>
+        </aside>
+    </section>
+</div>
+
+@code {
+    private readonly string[] paymentMethods = ["在线支付", "银行卡", "企业月结"];
+    private string customerName = "商城客户";
+    private string address = "上海市云原生大道 100 号";
+    private string paymentMethod = "在线支付";
+    private string? message;
+    private bool isError;
+    private bool isSubmitting;
+
+    private async Task SubmitAsync()
+    {
+        if (Cart.Lines.Count == 0)
+        {
+            isError = true;
+            message = "购物车为空，无法结算。";
+            return;
+        }
+
+        isSubmitting = true;
+        try
+        {
+            var request = new CreateOrderRequest(
+                customerName,
+                Cart.Lines.Select(line => new CreateOrderLineRequest(line.ProductId, line.Quantity)).ToArray());
+
+            var order = await ApiClient.SubmitOrderAsync(request);
+            Cart.Clear();
+            isError = false;
+            message = $"订单 {order.Id} 已提交，支付方式：{paymentMethod}";
+        }
+        catch (Exception exception)
+        {
+            isError = true;
+            message = exception.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+}
