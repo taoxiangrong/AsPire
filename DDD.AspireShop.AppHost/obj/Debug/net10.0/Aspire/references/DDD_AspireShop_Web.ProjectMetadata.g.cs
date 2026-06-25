@@ -15,7 +15,7 @@ public class DDD_AspireShop_Web : global::Aspire.Hosting.IProjectMetadata
     /// <summary>
     /// The path to the DDD_AspireShop_Web project.
     /// </summary>
-    public string ProjectPath => """/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Web/DDD.AspireShop.Web.csproj""";
+    public string ProjectPath => """/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Web/DDD.AspireShop.Web.csproj""";
 
     /// <summary>
     /// Gets a value indicating whether building the project before running it should be suppressed.

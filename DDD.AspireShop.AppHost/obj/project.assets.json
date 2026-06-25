@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "Aspire.Dashboard.Sdk.osx-arm64/13.3.0": {
@@ -3506,19 +3506,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/txr/.nuget/packages/": {}
+    "/Users/taoxiangrong/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.AppHost/DDD.AspireShop.AppHost.csproj",
+      "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.AppHost/DDD.AspireShop.AppHost.csproj",
       "projectName": "DDD.AspireShop.AppHost",
-      "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.AppHost/DDD.AspireShop.AppHost.csproj",
-      "packagesPath": "/Users/txr/.nuget/packages/",
-      "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.AppHost/obj/",
+      "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.AppHost/DDD.AspireShop.AppHost.csproj",
+      "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+      "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.AppHost/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/txr/.nuget/NuGet/NuGet.Config"
+        "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -3528,6 +3528,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -3542,10 +3543,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Aspire.Dashboard.Sdk.osx-arm64": {
@@ -3580,7 +3582,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -3857,5 +3859,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "包 \"MessagePack\" 2.5.192 具有已知的 高 严重性漏洞，https://github.com/advisories/GHSA-hv8m-jj95-wg3x",
+      "libraryId": "MessagePack",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

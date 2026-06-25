@@ -17,5 +17,5 @@ public class DDD_AspireShop_AppHost
     /// <summary>
     /// The path to the Aspire Host project.
     /// </summary>
-    public static string ProjectPath => """/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.AppHost""";
+    public static string ProjectPath => """/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.AppHost""";
 }

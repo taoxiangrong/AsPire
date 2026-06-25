@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj": {}
+    "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj": {}
   },
   "projects": {
-    "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj": {
+    "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj",
+        "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj",
         "projectName": "DDD.AspireShop.ApiService",
-        "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj",
-        "packagesPath": "/Users/txr/.nuget/packages/",
-        "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ApiService/obj/",
+        "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj",
+        "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+        "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ApiService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/txr/.nuget/NuGet/NuGet.Config"
+          "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -24,16 +24,17 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
-                "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj"
+              "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
+                "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj"
               },
-              "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj": {
-                "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj"
+              "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj": {
+                "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj"
               },
-              "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj": {
-                "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj"
+              "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj": {
+                "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj"
               }
             }
           }
@@ -48,10 +49,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Aspire.MySqlConnector": {
@@ -102,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -520,17 +522,17 @@
         }
       }
     },
-    "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
+    "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj",
+        "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj",
         "projectName": "DDD.AspireShop.Application",
-        "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj",
-        "packagesPath": "/Users/txr/.nuget/packages/",
-        "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/obj/",
+        "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj",
+        "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+        "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/txr/.nuget/NuGet/NuGet.Config"
+          "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -540,10 +542,11 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj": {
-                "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj"
+              "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj": {
+                "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj"
               }
             }
           }
@@ -558,10 +561,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "MediatR": {
@@ -585,7 +589,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -863,17 +867,17 @@
         }
       }
     },
-    "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj": {
+    "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj",
+        "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj",
         "projectName": "DDD.AspireShop.Domain",
-        "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj",
-        "packagesPath": "/Users/txr/.nuget/packages/",
-        "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/obj/",
+        "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj",
+        "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+        "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/txr/.nuget/NuGet/NuGet.Config"
+          "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -883,6 +887,7 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -897,10 +902,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -918,7 +924,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1196,17 +1202,17 @@
         }
       }
     },
-    "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj": {
+    "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj",
+        "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj",
         "projectName": "DDD.AspireShop.Infrastructure",
-        "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj",
-        "packagesPath": "/Users/txr/.nuget/packages/",
-        "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Infrastructure/obj/",
+        "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Infrastructure/DDD.AspireShop.Infrastructure.csproj",
+        "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+        "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/txr/.nuget/NuGet/NuGet.Config"
+          "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -1216,13 +1222,14 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
-                "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj"
+              "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
+                "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj"
               },
-              "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj": {
-                "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj"
+              "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj": {
+                "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Domain/DDD.AspireShop.Domain.csproj"
               }
             }
           }
@@ -1237,10 +1244,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
@@ -1272,7 +1280,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1550,17 +1558,17 @@
         }
       }
     },
-    "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj": {
+    "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj",
+        "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj",
         "projectName": "DDD.AspireShop.ServiceDefaults",
-        "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj",
-        "packagesPath": "/Users/txr/.nuget/packages/",
-        "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/obj/",
+        "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj",
+        "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+        "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/txr/.nuget/NuGet/NuGet.Config"
+          "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -1570,6 +1578,7 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -1584,10 +1593,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.Extensions.Http.Resilience": {
@@ -1638,7 +1648,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

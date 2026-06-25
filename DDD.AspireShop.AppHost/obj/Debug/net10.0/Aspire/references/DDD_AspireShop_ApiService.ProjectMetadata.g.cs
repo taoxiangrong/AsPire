@@ -15,7 +15,7 @@ public class DDD_AspireShop_ApiService : global::Aspire.Hosting.IProjectMetadata
     /// <summary>
     /// The path to the DDD_AspireShop_ApiService project.
     /// </summary>
-    public string ProjectPath => """/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj""";
+    public string ProjectPath => """/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ApiService/DDD.AspireShop.ApiService.csproj""";
 
     /// <summary>
     /// Gets a value indicating whether building the project before running it should be suppressed.

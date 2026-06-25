@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "MediatR/14.1.0": {
@@ -32,7 +32,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.App.Internal.Assets/10.0.5": {
+      "Microsoft.AspNetCore.App.Internal.Assets/10.0.9": {
         "type": "package",
         "build": {
           "build/Microsoft.AspNetCore.App.Internal.Assets.props": {},
@@ -555,10 +555,10 @@
         "mediatr.contracts.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.App.Internal.Assets/10.0.5": {
-      "sha512": "Oxw9Ps1/nd6c/EMCAI13AeJFEqXezAvCEOshMjUWmL7LeGirHJNzytR2e/3jINYg0j2TmPvNUowGHf+gp8zDSQ==",
+    "Microsoft.AspNetCore.App.Internal.Assets/10.0.9": {
+      "sha512": "E9Wp/LPKAYkGOVBv4lt5U5TnUA/7pov7QZAwF3eI64kK8AAXqkPDwuadEOwpL1WXEfgecYm0fccluvABp32D8g==",
       "type": "package",
-      "path": "microsoft.aspnetcore.app.internal.assets/10.0.5",
+      "path": "microsoft.aspnetcore.app.internal.assets/10.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -574,7 +574,7 @@
         "build/Microsoft.AspNetCore.App.Internal.Assets.targets",
         "buildMultiTargeting/Microsoft.AspNetCore.App.Internal.Assets.targets",
         "buildTransitive/Microsoft.AspNetCore.App.Internal.Assets.targets",
-        "microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512",
+        "microsoft.aspnetcore.app.internal.assets.10.0.9.nupkg.sha512",
         "microsoft.aspnetcore.app.internal.assets.nuspec"
       ]
     },
@@ -1271,23 +1271,23 @@
     "net10.0": [
       "DDD.AspireShop.Application >= 1.0.0",
       "DDD.AspireShop.ServiceDefaults >= 1.0.0",
-      "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.5"
+      "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.9"
     ]
   },
   "packageFolders": {
-    "/Users/txr/.nuget/packages/": {}
+    "/Users/taoxiangrong/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Web/DDD.AspireShop.Web.csproj",
+      "projectUniqueName": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Web/DDD.AspireShop.Web.csproj",
       "projectName": "DDD.AspireShop.Web",
-      "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Web/DDD.AspireShop.Web.csproj",
-      "packagesPath": "/Users/txr/.nuget/packages/",
-      "outputPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Web/obj/",
+      "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Web/DDD.AspireShop.Web.csproj",
+      "packagesPath": "/Users/taoxiangrong/.nuget/packages/",
+      "outputPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/txr/.nuget/NuGet/NuGet.Config"
+        "/Users/taoxiangrong/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -1297,13 +1297,14 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
-              "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj"
+            "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj": {
+              "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.Application/DDD.AspireShop.Application.csproj"
             },
-            "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj": {
-              "projectPath": "/Users/txr/Desktop/CodeWork/AspireDDD/DDD.AspireShop/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj"
+            "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj": {
+              "projectPath": "/Users/taoxiangrong/Desktop/Work/AsPire/DDD.AspireShop.ServiceDefaults/DDD.AspireShop.ServiceDefaults.csproj"
             }
           }
         }
@@ -1318,16 +1319,17 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Microsoft.AspNetCore.App.Internal.Assets": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[10.0.5, )",
+            "version": "[10.0.9, )",
             "autoReferenced": true
           }
         },
@@ -1350,7 +1352,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
