@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DDD.AspireShop.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f57fd88069943a2f2f0debd30f2c4ba7f292061e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2edd90ff8daf1773a1b88c99eca4c4062298cd58")]
 [assembly: System.Reflection.AssemblyProductAttribute("DDD.AspireShop.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DDD.AspireShop.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
